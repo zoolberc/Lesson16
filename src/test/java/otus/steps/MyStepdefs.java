@@ -28,15 +28,15 @@ public class MyStepdefs extends DriverManager {
     String lastNameRandom = RandomStringUtils.random(10, true, false);
     String emailNameRandom = RandomStringUtils.random(10, true, false);
 
-    @Before
-    public void start() {
-        setupDriver();
-    }
-
-    @After
-    public void stop() {
-        quitDriver();
-    }
+//    @Before
+//    public void start() {
+//        setupDriver();
+//    }
+//
+//    @After
+//    public void stop() {
+//        quitDriver();
+//    }
 
     @Given("^Перейти на главную страницу$")
     public void openStartPage() {
@@ -55,7 +55,6 @@ public class MyStepdefs extends DriverManager {
     @Then("^Проверить, что пользователь авторизирован$")
     public void checkAuth(){
         authPage.checkSignIn("Турал","Алиев");
-
     }
 
     @When("Ввести некорректный логин и пароль")
@@ -148,5 +147,22 @@ public class MyStepdefs extends DriverManager {
     @Then("Проверить, что завяка была отправлена")
     public void checkSuccessRequest() {
         teachersPage.checkSuccessRequest();
+    }
+
+    @Then("Сменить фото профиля")
+    public void change () {
+        profilePage.uploadImage();
+        profilePage.save();
+    }
+
+    @When("Перейти в раздел Контакты")
+    public void goToContactPage() {
+        mainPage.goToContactPage();
+    }
+
+    @Then("Проверить проверить, что номер телефона {string}")
+    public void checkNumberOnPage(String arg1) {
+        contactPage.checkContact(arg1);
+
     }
 }

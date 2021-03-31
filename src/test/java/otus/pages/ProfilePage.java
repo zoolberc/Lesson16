@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import otus.configs.VariableConfig;
 
+import java.io.File;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -42,6 +43,9 @@ public class ProfilePage {
 
     @FindBy(id = "id_contact-1-value")
     private WebElement secondContact;
+
+    @FindBy(xpath = "//*[@type='file']")
+    private WebElement uploadAvatar;
 
     public void waitVisibility(WebElement webElement) {
         wait.until(ExpectedConditions.visibilityOf(webElement));
@@ -112,4 +116,15 @@ public class ProfilePage {
         driver.findElement(By.cssSelector("button.button_md-4:nth-child(2)")).click(); // сохранение данных
         driver.findElement(By.xpath("//*[@title = 'Редактировать резюме']")).isDisplayed(); // проверка что данные сораннены
     }
+
+    public void uploadImage(){
+        File file = new File("src/test/resources/images/img.png");
+        //isElementDisplayed(uploadAvatar);
+        uploadAvatar.sendKeys(file.getAbsolutePath());
+        WebElement select = driver.findElement(By.xpath("//*[contains(text(), 'Выбрать')]"));
+        isElementDisplayed(select);
+        select.click();
+        assertEquals("Персональные данные", driver.findElement(By.cssSelector("h3.text")).getText());
+    }
+
 }

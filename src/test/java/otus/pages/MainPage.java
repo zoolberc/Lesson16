@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -33,6 +34,8 @@ public class MainPage {
         waitVisibility(webElement);
         assertTrue(webElement.isDisplayed());
     }
+     @FindBy(xpath = "//*[@title='Контакты']")
+     private WebElement contactButton;
 
     public void goToStartPage() {
         driver.get("https://otus.ru/");
@@ -65,5 +68,10 @@ public class MainPage {
         action.moveToElement(icon).build().perform();
         driver.findElement(By.cssSelector(".header2-menu__dropdown-text")).click();
         logger.info("Go to my profile");
+    }
+
+    public void goToContactPage() {
+        isElementDisplayed(contactButton);
+        contactButton.click();
     }
 }

@@ -21,7 +21,8 @@ public class DriverManager {
     protected TestingCoursesPage testingCoursesPage;
     protected ProfilePage profilePage;
     protected TeachersPage teachersPage;
-    //protected BasePage basePage;
+    protected ContactPage contactPage;
+
     public Logger logger = LogManager.getLogger(DriverManager.class);
 
     public void setupDriver() {
@@ -55,6 +56,8 @@ public class DriverManager {
         testingCoursesPage = PageFactory.initElements(driver, TestingCoursesPage.class);
         profilePage = PageFactory.initElements(driver, ProfilePage.class);
         teachersPage = PageFactory.initElements(driver, TeachersPage.class);
+        contactPage = PageFactory.initElements(driver, ContactPage.class);
+
 
         //basePage = PageFactory.initElements(driver, BasePage.class);
     }
