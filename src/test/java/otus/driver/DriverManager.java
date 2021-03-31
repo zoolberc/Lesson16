@@ -7,15 +7,24 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.support.PageFactory;
+import otus.pages.*;
 
 import java.util.concurrent.TimeUnit;
 
 public class DriverManager {
-    public static WebDriver driver;
-    private static String browser;
-    public static Logger logger = LogManager.getLogger(DriverManager.class);
+    public WebDriver driver;
+    public String browser;
+    protected MainPage mainPage;
+    protected AuthPage authPage;
+    protected RegisterPage registerPage;
+    protected TestingCoursesPage testingCoursesPage;
+    protected ProfilePage profilePage;
+    protected TeachersPage teachersPage;
+    //protected BasePage basePage;
+    public Logger logger = LogManager.getLogger(DriverManager.class);
 
-    public static void setupDriver() {
+    public void setupDriver() {
         if (System.getProperty("Browser") == null) {
             browser = "";
         } else {
@@ -40,12 +49,22 @@ public class DriverManager {
         logger.info("Browser driver open");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        mainPage = PageFactory.initElements(driver, MainPage.class);
+        authPage = PageFactory.initElements(driver, AuthPage.class);
+        registerPage = PageFactory.initElements(driver, RegisterPage.class);
+        testingCoursesPage = PageFactory.initElements(driver, TestingCoursesPage.class);
+        profilePage = PageFactory.initElements(driver, ProfilePage.class);
+        teachersPage = PageFactory.initElements(driver, TeachersPage.class);
+
+        //basePage = PageFactory.initElements(driver, BasePage.class);
     }
-    public void quitDriver(){
+
+    public void quitDriver() {
         if (driver != null) {
             driver.manage().deleteAllCookies();
             driver.quit();
             logger.info("Browser driver closed");
+
         }
     }
 }
