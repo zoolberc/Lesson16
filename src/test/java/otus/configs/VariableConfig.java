@@ -14,23 +14,23 @@ public interface VariableConfig extends Config {
     @Key("passwordOtus")
     String passwordOtus();
 
-    @Key("firstName")
-    String firstName();
+//    @Key("firstName")
+//    String firstName();
 
-    @Key("firstNameLatin")
-    String firstNameLatin();
+//    @Key("firstNameLatin")
+//    String firstNameLatin();
 
-    @Key("lastName")
-    String lastName();
+//    @Key("lastName")
+//    String lastName();
 
-    @Key("lastNameLatin")
-    String lastNameLatin();
+//    @Key("lastNameLatin")
+//    String lastNameLatin();
 
-    @Key("blogName")
-    String blogName();
+//    @Key("blogName")
+//    String blogName();
 
-    @Key("DOB")
-    String DOB();
+//    @Key("DOB")
+//    String DOB();
 
     @Key("VK")
     String vkContact();
@@ -38,12 +38,12 @@ public interface VariableConfig extends Config {
     @Key("Skype")
     String skypeContact();
 
-    @Key("Country")
-    String Country();
-
-    @Key("City")
-    String City();
-
-    @Key("English")
-    String englishLevel();
+//    @Key("Country")
+//    String Country();
+//
+//    @Key("City")
+//    String City();
+//
+//    @Key("English")
+//    String englishLevel();
 }

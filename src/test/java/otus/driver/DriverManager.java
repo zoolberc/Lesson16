@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverManager {
     public WebDriver driver;
-    public String browser;
     protected MainPage mainPage;
     protected AuthPage authPage;
     protected RegisterPage registerPage;
@@ -25,28 +24,25 @@ public class DriverManager {
 
     public Logger logger = LogManager.getLogger(DriverManager.class);
 
-    public void setupDriver() {
-        if (System.getProperty("Browser") == null) {
-            browser = "";
-        } else {
-            browser = System.getProperty("Browser").toLowerCase();
-        }
-        switch (browser) {
-            case ("\'opera\'"):
+    public void setupDriver(DriverType typeDriver) {
+
+        switch (typeDriver) {
+            case OPERA:
                 WebDriverManager.operadriver().setup();
                 driver = new OperaDriver();
                 break;
 
-            case ("\'firefox\'"):
+            case FIREFOX:
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
                 break;
 
-            default:
+            case CHROME:
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
                 break;
         }
+
         logger.info("Browser driver open");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -57,9 +53,6 @@ public class DriverManager {
         profilePage = PageFactory.initElements(driver, ProfilePage.class);
         teachersPage = PageFactory.initElements(driver, TeachersPage.class);
         contactPage = PageFactory.initElements(driver, ContactPage.class);
-
-
-        //basePage = PageFactory.initElements(driver, BasePage.class);
     }
 
     public void quitDriver() {

@@ -11,6 +11,9 @@ import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.lang.reflect.Array;
+import java.util.List;
+
 import static java.lang.Thread.sleep;
 import static org.junit.Assert.assertTrue;
 
@@ -26,7 +29,7 @@ public class AuthPage{
     WebDriverWait wait;
 
     @FindBy(xpath = "//*[contains(text(), 'Авторизуйтесь чтобы продолжить')]")
-    private WebElement checkAuthpage;
+    private WebElement checkAuthPage;
 
     @FindBy(css = "div.new-input-line_slim:nth-child(3) > input:nth-child(1)")
     private WebElement login;
@@ -49,6 +52,13 @@ public class AuthPage{
     @FindBy(xpath = "//*[contains(text(), 'Восстановить')]")
     private WebElement recoveryButton;
 
+    @FindBy(css = ".header2-menu__item_dropdown_no-border")
+    private WebElement icon;
+
+    @FindBy(xpath = "//*[@placeholder='Электронная почта']")
+    private List<WebElement> email;
+
+
 
     public void waitVisibility(WebElement webElement){
         wait.until(ExpectedConditions.visibilityOf(webElement));
@@ -58,7 +68,7 @@ public class AuthPage{
         assertTrue(webElement.isDisplayed());
     }
     private void checkAuthPage() {
-        isElementDisplayed(checkAuthpage);
+        isElementDisplayed(checkAuthPage);
         logger.debug("Checking whether it is on the authorization pages");
     }
 
@@ -84,8 +94,8 @@ public class AuthPage{
     }
 
     public void checkSignIn(String firstName, String lastName) {
-        String iconLocator = ".header2-menu__item_dropdown_no-border";
-        WebElement icon = driver.findElement(By.cssSelector(iconLocator));
+//        String iconLocator = ".header2-menu__item_dropdown_no-border";
+//        WebElement icon = driver.findElement(By.cssSelector(iconLocator));
         Actions action = new Actions(driver);
         action.moveToElement(icon).build().perform();
         driver.findElement(By.xpath("//*[contains(text(),'"+firstName+" "+lastName+"')]"));
@@ -105,19 +115,18 @@ public class AuthPage{
         isElementDisplayed(incorrectLoginOrPassword);
     }
 
-    public void forgotPassword(String myemail) throws InterruptedException {
-        sleep(5000);
+    public void forgotPassword(String myEmail) throws InterruptedException {
+        sleep(1000);
         isElementDisplayed(forgotPasswordButton);
         forgotPasswordButton.click();
         isElementDisplayed(labelPasswordRecovery);
-        WebElement email = driver.findElements(By.xpath("//*[@placeholder='Электронная почта']")).get(3);
-        isElementDisplayed(email);
-        clearAndSendKeys(email,myemail);
+        isElementDisplayed(email.get(3));
+        clearAndSendKeys(email.get(3),myEmail);
         recoveryButton.click();
 
     }
-    public void checkSendMail(String myemail){
-        WebElement successSendMail = driver.findElement(By.xpath("//*[contains(text(),'Письмо с ссылкой для восстановление пароля отправлено на почту "+myemail+"')]"));
+    public void checkSendMail(String myEmail){
+        WebElement successSendMail = driver.findElement(By.xpath("//*[contains(text(),'Письмо с ссылкой для восстановление пароля отправлено на почту "+myEmail+"')]"));
         isElementDisplayed(successSendMail);
     }
 

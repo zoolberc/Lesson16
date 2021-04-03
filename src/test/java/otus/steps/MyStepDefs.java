@@ -6,60 +6,53 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.ru.Пусть;
-import net.bytebuddy.utility.RandomString;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.openqa.selenium.WebElement;
 import otus.configs.VariableConfig;
 import otus.driver.DriverManager;
-import otus.hooks.DriverHooks;
-import otus.pages.AuthPage;
-import otus.pages.BasePage;
-import otus.pages.MainPage;
+import otus.driver.DriverType;
 
-import java.nio.charset.Charset;
-import java.util.Random;
-
-public class MyStepdefs extends DriverManager {
+public class MyStepDefs extends DriverManager {
 
     public static VariableConfig config = ConfigFactory.create(VariableConfig.class);
     String firstNameRandom = RandomStringUtils.random(10, true, false);
     String lastNameRandom = RandomStringUtils.random(10, true, false);
     String emailNameRandom = RandomStringUtils.random(10, true, false);
 
-//    @Before
-//    public void start() {
-//        setupDriver();
-//    }
-//
-//    @After
-//    public void stop() {
-//        quitDriver();
-//    }
+    @Before
+    public void start() {
+        setupDriver(DriverType.CHROME);
+    }
 
-    @Given("^Перейти на главную страницу$")
+    @After
+    public void stop() {
+        quitDriver();
+    }
+
+    @Given("Перейти на главную страницу")
     public void openStartPage() {
         mainPage.goToStartPage();
     }
 
-    @When("^Ввести данные логин и пароль$")
-    public void inputLogAndPass(){
+    @When("Ввести данные логин и пароль")
+    public void inputLogAndPass() {
         authPage.login(config.emailOtus(), config.passwordOtus());
 
     }
-    @And("^Открыть страницу авторизации$")
-    public void openAuthPage(){
+
+    @And("Открыть страницу авторизации")
+    public void openAuthPage() {
         mainPage.openAuthPage();
     }
-    @Then("^Проверить, что пользователь авторизирован$")
-    public void checkAuth(){
-        authPage.checkSignIn("Турал","Алиев");
+
+    @Then("Проверить, что пользователь авторизирован")
+    public void checkAuth() {
+        authPage.checkSignIn("Турал", "Алиев");
     }
 
     @When("Ввести некорректный логин и пароль")
     public void inputIncorrectPassword() {
-        authPage.login(config.emailOtus(),"1234");
+        authPage.login(config.emailOtus(), "1234");
     }
 
     @Then("Проверить, что появилась надпись о неккоррктном логине или пароле")
@@ -75,8 +68,7 @@ public class MyStepdefs extends DriverManager {
 
     @When("Заполнить поля регистрации")
     public void fillRegistrationData() {
-
-        registerPage.fillRegistrationField(firstNameRandom, lastNameRandom,emailNameRandom+"@gmail.com");
+        registerPage.fillRegistrationField(firstNameRandom, lastNameRandom, emailNameRandom + "@gmail.com");
     }
 
     @Then("Проветь, что пользователь успешно зарегистрировался")
@@ -96,12 +88,12 @@ public class MyStepdefs extends DriverManager {
 
     @When("Открыть куры по тестированию")
     public void openTestingCourses() {
-    mainPage.openTestingCoursePage();
+        mainPage.openTestingCoursePage();
     }
 
     @Then("Проверить, что курс отображается на странице")
-    public void checkVisibleCourse() {
-        testingCoursesPage.checkTestingCourse("Java QA Automation Engineer");
+    public void checkVisibleCourse() throws InterruptedException {
+        testingCoursesPage.checkTestingCourse("Java QA Engineer");
     }
 
     @When("Перейти на страницу с данными профиля")
@@ -118,7 +110,7 @@ public class MyStepdefs extends DriverManager {
 
     @Then("Проверить, что имя и фамилия изменились")
     public void checkingChanges() {
-        profilePage.check(firstNameRandom,lastNameRandom);
+        profilePage.check(firstNameRandom, lastNameRandom);
     }
 
     @And("Добавть дополнительные каналы связи и сохранить")
@@ -150,7 +142,7 @@ public class MyStepdefs extends DriverManager {
     }
 
     @Then("Сменить фото профиля")
-    public void change () {
+    public void change() {
         profilePage.uploadImage();
         profilePage.save();
     }

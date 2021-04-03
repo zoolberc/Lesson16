@@ -10,6 +10,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 import static org.junit.Assert.assertTrue;
 
 public class RegisterPage {
@@ -22,8 +24,8 @@ public class RegisterPage {
 
     WebDriver driver;
     WebDriverWait wait;
-    WebElement registrationFirstName;
-    WebElement registrationLastName;
+    //WebElement registrationFirstName;
+    //WebElement registrationLastName;
 
     @FindBy(xpath = "//*[@data-tab-id='register']")
     private WebElement registrationButton;
@@ -36,6 +38,15 @@ public class RegisterPage {
 
     @FindBy(xpath = "//*[contains(text(),'Зарегистрироваться')]")
     private WebElement submit;
+
+    @FindBy(xpath = "//*[@name='fname']")
+    private List<WebElement> registrationFirstName;
+
+    @FindBy(xpath = "//*[@name='lname']")
+    private List<WebElement> registrationLastName;
+
+    @FindBy(css = ".header2-menu__item_dropdown_no-border")
+    private WebElement iconLocator;
 
 
     public void waitVisibility(WebElement webElement) {
@@ -56,22 +67,22 @@ public class RegisterPage {
         registrationButton.click();
     }
     public void checkRegistration(String firstName, String lastName) {
-        String iconLocator = ".header2-menu__item_dropdown_no-border";
-        WebElement icon = driver.findElement(By.cssSelector(iconLocator));
+//        String iconLocator = ".header2-menu__item_dropdown_no-border";
+//        WebElement icon = driver.findElement(By.cssSelector(iconLocator));
         Actions action = new Actions(driver);
-        action.moveToElement(icon).build().perform();
+        action.moveToElement(iconLocator).build().perform();
         driver.findElement(By.xpath("//*[contains(text(),'"+firstName+" "+lastName+"')]"));
         logger.debug("Checking the login to my profile");
         logger.info("Registration passed");
     }
 
     public void fillRegistrationField(String firstName, String lastName, String email){
-        registrationFirstName  = driver.findElements(By.xpath("//*[@name='fname']")).get(1);
-        registrationLastName = driver.findElements(By.xpath("//*[@name='lname']")).get(1);
-        isElementDisplayed(registrationFirstName);
-        clearAndSendKeys(registrationFirstName, firstName);
-        isElementDisplayed(registrationLastName);
-        clearAndSendKeys(registrationLastName, lastName);
+        //registrationFirstName  = driver.findElements(By.xpath("//*[@name='fname']")).get(1);
+        //registrationLastName = driver.findElements(By.xpath("//*[@name='lname']")).get(1);
+        isElementDisplayed(registrationFirstName.get(1));
+        clearAndSendKeys(registrationFirstName.get(1), firstName);
+        isElementDisplayed(registrationLastName.get(1));
+        clearAndSendKeys(registrationLastName.get(1), lastName);
         isElementDisplayed(registrationEmail);
         clearAndSendKeys(registrationEmail,email);
         isElementDisplayed(submit);

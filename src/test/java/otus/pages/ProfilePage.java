@@ -47,6 +47,25 @@ public class ProfilePage {
     @FindBy(xpath = "//*[@type='file']")
     private WebElement uploadAvatar;
 
+    @FindBy(xpath = "//*[@title = 'Редактировать резюме']")
+    private WebElement titleEditResume;
+
+    @FindBy(css = "h3.text")
+    private WebElement titlePersonalData;
+
+    @FindBy(xpath = "//*[@title = 'VK']")
+    private WebElement titleVK;
+
+    @FindBy(xpath = "//*[@title = 'Skype']")
+    private List<WebElement> titleSkype;
+
+    @FindBy(xpath = "//*[contains(@class,'js-lk-cv-custom-select-add')]")
+    private WebElement addSecContact;
+
+    @FindBy(xpath = "//*[contains(text(), 'Выбрать')]")
+    private List<WebElement> selectButton;
+
+
     public void waitVisibility(WebElement webElement) {
         wait.until(ExpectedConditions.visibilityOf(webElement));
     }
@@ -74,37 +93,44 @@ public class ProfilePage {
     public void save() {
         isElementDisplayed(saveButton);
         saveButton.click();
-        driver.findElement(By.xpath("//*[@title = 'Редактировать резюме']")).isDisplayed(); // проверка что данные сораннены
+        //.findElement(By.xpath("//*[@title = 'Редактировать резюме']")).isDisplayed(); // проверка что данные сораннены
+        titleEditResume.isDisplayed();
         logger.debug("Checking data storage");
         logger.info("Data change successfully");
     }
     public void check(String latinFirstName, String latinLastName){
-        driver.findElement(By.xpath("//*[@title = 'Редактировать резюме']")).click();
-        assertEquals("Персональные данные", driver.findElement(By.cssSelector("h3.text")).getText());
+        //driver.findElement(By.xpath("//*[@title = 'Редактировать резюме']")).click();
+        titleEditResume.click();
+        //assertEquals("Персональные данные", driver.findElement(By.cssSelector("h3.text")).getText());
+        assertEquals("Персональные данные",titlePersonalData.getText());
         assertEquals(latinFirstName, firstNameLatin.getAttribute("value"));
         assertEquals(latinLastName, lastNameLatin.getAttribute("value"));
     }
     public void addFirstContact(String text) {
         driver.findElement(By.xpath("//*[@class ='placeholder']//..")).click();
-        driver.findElement(By.xpath("//*[@title = 'VK']")).click(); // выбор способа связи ВК
+        //driver.findElement(By.xpath("//*[@title = 'VK']")).click(); // выбор способа связи ВК
+        titleVK.click();
         isElementDisplayed(firstContact);
         firstContact.sendKeys(text);
         logger.debug("Adding an additional contact");
     }
     public void addSecondContact(String text) {
-        driver.findElement(By.xpath("//*[contains(@class,'js-lk-cv-custom-select-add')]")).click();
+        addSecContact.click();
+        //driver.findElement(By.xpath("//*[contains(@class,'js-lk-cv-custom-select-add')]")).click();
         driver.findElements(By.xpath("//*[@class ='placeholder']//..")).get(0).click();
-        driver.findElements(By.xpath("//*[@title = 'Skype']")).get(1).click();
+        //driver.findElements(By.xpath("//*[@title = 'Skype']")).get(1).click();
+        titleSkype.get(1).click();
         isElementDisplayed(secondContact);
         secondContact.sendKeys(text);
         logger.debug("Adding an additional contact");
     }
 
     public void checkingContactStorage(){
-        WebElement edit = driver.findElement(By.xpath("//*[@title = 'Редактировать резюме']"));
-        isElementDisplayed(edit);
-        edit.click();
-        assertEquals("Персональные данные", driver.findElement(By.cssSelector("h3.text")).getText());
+        //WebElement edit = driver.findElement(By.xpath("//*[@title = 'Редактировать резюме']"));
+        isElementDisplayed(titleEditResume);
+        titleEditResume.click();
+       // assertEquals("Персональные данные", driver.findElement(By.cssSelector("h3.text")).getText());
+        assertEquals("Персональные данные",titlePersonalData.getText());
         assertEquals(config.skypeContact(), firstContact.getAttribute("value"));
         assertEquals(config.vkContact(), secondContact.getAttribute("value"));
     }
@@ -113,18 +139,21 @@ public class ProfilePage {
         List<WebElement> conts = driver.findElements(By.xpath("//*[contains(text(), 'Удалить')]"));
         conts.get(1).click();
         conts.get(3).click();
-        driver.findElement(By.cssSelector("button.button_md-4:nth-child(2)")).click(); // сохранение данных
-        driver.findElement(By.xpath("//*[@title = 'Редактировать резюме']")).isDisplayed(); // проверка что данные сораннены
+        //driver.findElement(By.cssSelector("button.button_md-4:nth-child(2)")).click(); // сохранение данных
+        saveButton.click();
+        //driver.findElement(By.xpath("//*[@title = 'Редактировать резюме']")).isDisplayed(); // проверка что данные сораннены
+        titleEditResume.isDisplayed();
     }
 
     public void uploadImage(){
         File file = new File("src/test/resources/images/img.png");
         //isElementDisplayed(uploadAvatar);
         uploadAvatar.sendKeys(file.getAbsolutePath());
-        WebElement select = driver.findElement(By.xpath("//*[contains(text(), 'Выбрать')]"));
-        isElementDisplayed(select);
-        select.click();
-        assertEquals("Персональные данные", driver.findElement(By.cssSelector("h3.text")).getText());
+        //WebElement select = driver.findElement(By.xpath("//*[contains(text(), 'Выбрать')]"));
+        isElementDisplayed(selectButton.get(1));
+        selectButton.get(1).click();
+       // assertEquals("Персональные данные", driver.findElement(By.cssSelector("h3.text")).getText());
+        assertEquals("Персональные данные",titlePersonalData.getText());
     }
 
 }

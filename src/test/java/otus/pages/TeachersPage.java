@@ -1,5 +1,7 @@
 package otus.pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.junit.Assert.assertTrue;
 
 public class TeachersPage {
+    public Logger logger = LogManager.getLogger(TeachersPage.class);
     public TeachersPage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 10);
@@ -54,6 +57,7 @@ public class TeachersPage {
 
     public void openPage() {
         driver.get("https://otus.ru/teachers-invite/");
+        logger.info("Teachers page is open");
     }
 
     public void filingForm() {
@@ -64,10 +68,12 @@ public class TeachersPage {
         clearAndSendKeys(phone, "79999999999");
         clearAndSendKeys(email,"test@test.com");
         buttonBecomeTeacher.click();
+        logger.info("The form is completed");
     }
 
     public void  checkSuccessRequest(){
         isElementDisplayed(labelSuccessSend);
+        logger.info("Application has been successfully sent");
     }
 
 }
