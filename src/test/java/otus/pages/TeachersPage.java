@@ -12,13 +12,14 @@ import static org.junit.Assert.assertTrue;
 
 public class TeachersPage {
     public Logger logger = LogManager.getLogger(TeachersPage.class);
+
     public TeachersPage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, 10);
+        basePage = new BasePage(driver);
     }
 
     WebDriver driver;
-    WebDriverWait wait;
+    BasePage basePage;
 
     @FindBy(xpath = "//*[@data-modal-id='teachers-request']")
     private WebElement teachersButton;
@@ -41,19 +42,7 @@ public class TeachersPage {
     @FindBy(xpath = "//*[contains(text(), 'Спасибо!')]")
     private WebElement labelSuccessSend;
 
-    public void waitVisibility(WebElement webElement) {
-        wait.until(ExpectedConditions.visibilityOf(webElement));
-    }
 
-    public void isElementDisplayed(WebElement webElement) {
-        waitVisibility(webElement);
-        assertTrue(webElement.isDisplayed());
-    }
-
-    public void clearAndSendKeys(WebElement webElement, String text) {
-        webElement.clear();
-        webElement.sendKeys(text);
-    }
 
     public void openPage() {
         driver.get("https://otus.ru/teachers-invite/");
@@ -61,18 +50,18 @@ public class TeachersPage {
     }
 
     public void filingForm() {
-        isElementDisplayed(teachersButton);
+        basePage.checkElement(teachersButton);
         teachersButton.click();
-        isElementDisplayed(labelBecomeTeacher);
-        clearAndSendKeys(fullName, "Иванов Иван Иваныч");
-        clearAndSendKeys(phone, "79999999999");
-        clearAndSendKeys(email,"test@test.com");
+        basePage.checkElement(labelBecomeTeacher);
+        basePage.clearAndSendKeys(fullName, "Иванов Иван Иваныч");
+        basePage.clearAndSendKeys(phone, "79999999999");
+        basePage.clearAndSendKeys(email, "test@test.com");
         buttonBecomeTeacher.click();
         logger.info("The form is completed");
     }
 
-    public void  checkSuccessRequest(){
-        isElementDisplayed(labelSuccessSend);
+    public void checkSuccessRequest() {
+        basePage.checkElement(labelSuccessSend);
         logger.info("Application has been successfully sent");
     }
 

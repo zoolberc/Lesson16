@@ -7,26 +7,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.lang.reflect.Array;
 import java.util.List;
 
 import static java.lang.Thread.sleep;
-import static org.junit.Assert.assertTrue;
 
-public class AuthPage{
+public class AuthPage {
     public Logger logger = LogManager.getLogger(AuthPage.class);
 
     public AuthPage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver,15);
-        }
+        basePage = new BasePage(driver);
+
+    }
 
     WebDriver driver;
-    WebDriverWait wait;
+    BasePage basePage;
+
 
     @FindBy(xpath = "//*[contains(text(), 'Авторизуйтесь чтобы продолжить')]")
     private WebElement checkAuthPage;
@@ -58,34 +55,20 @@ public class AuthPage{
     @FindBy(xpath = "//*[@placeholder='Электронная почта']")
     private List<WebElement> email;
 
-
-
-    public void waitVisibility(WebElement webElement){
-        wait.until(ExpectedConditions.visibilityOf(webElement));
-    }
-    public void isElementDisplayed(WebElement webElement){
-        waitVisibility(webElement);
-        assertTrue(webElement.isDisplayed());
-    }
     private void checkAuthPage() {
-        isElementDisplayed(checkAuthPage);
+        basePage.checkElement(checkAuthPage);
         logger.debug("Checking whether it is on the authorization pages");
     }
 
-    public void clearAndSendKeys(WebElement webElement, String text){
-        webElement.clear();
-        webElement.sendKeys(text);
-    }
-
     private void fillEmail(String text) {
-        isElementDisplayed(login);
-        clearAndSendKeys(login, text);
+        basePage.checkElement(login);
+        basePage.clearAndSendKeys(login, text);
         logger.debug("Filling in the E-mail field");
     }
 
     private void fillPassword(String text) {
-        isElementDisplayed(password);
-        clearAndSendKeys(password, text);
+        basePage.checkElement(password);
+        basePage.clearAndSendKeys(password, text);
         logger.debug("Filling in the password field");
     }
 
@@ -94,11 +77,9 @@ public class AuthPage{
     }
 
     public void checkSignIn(String firstName, String lastName) {
-//        String iconLocator = ".header2-menu__item_dropdown_no-border";
-//        WebElement icon = driver.findElement(By.cssSelector(iconLocator));
         Actions action = new Actions(driver);
         action.moveToElement(icon).build().perform();
-        driver.findElement(By.xpath("//*[contains(text(),'"+firstName+" "+lastName+"')]"));
+        driver.findElement(By.xpath("//*[contains(text(),'" + firstName + " " + lastName + "')]"));
         logger.debug("Checking the login to my profile");
         logger.info("Authorization passed");
     }
@@ -111,23 +92,24 @@ public class AuthPage{
         logger.info("Authorization passed");
     }
 
-    public void checkTextIncorrectLoginOrPassword(){
-        isElementDisplayed(incorrectLoginOrPassword);
+    public void checkTextIncorrectLoginOrPassword() {
+        basePage.checkElement(incorrectLoginOrPassword);
     }
 
     public void forgotPassword(String myEmail) throws InterruptedException {
         sleep(1000);
-        isElementDisplayed(forgotPasswordButton);
+        basePage.checkElement(forgotPasswordButton);
         forgotPasswordButton.click();
-        isElementDisplayed(labelPasswordRecovery);
-        isElementDisplayed(email.get(3));
-        clearAndSendKeys(email.get(3),myEmail);
+        basePage.checkElement(labelPasswordRecovery);
+        basePage.checkElement(email.get(3));
+        basePage.clearAndSendKeys(email.get(3), myEmail);
         recoveryButton.click();
 
     }
-    public void checkSendMail(String myEmail){
-        WebElement successSendMail = driver.findElement(By.xpath("//*[contains(text(),'Письмо с ссылкой для восстановление пароля отправлено на почту "+myEmail+"')]"));
-        isElementDisplayed(successSendMail);
+
+    public void checkSendMail(String myEmail) {
+        WebElement successSendMail = driver.findElement(By.xpath("//*[contains(text(),'Письмо с ссылкой для восстановление пароля отправлено на почту " + myEmail + "')]"));
+        basePage.checkElement(successSendMail);
     }
 
 

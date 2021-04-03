@@ -11,6 +11,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import otus.configs.VariableConfig;
 import otus.driver.DriverManager;
 import otus.driver.DriverType;
+import otus.pages.AuthPage;
 
 public class MyStepDefs extends DriverManager {
 
@@ -37,7 +38,6 @@ public class MyStepDefs extends DriverManager {
     @When("Ввести данные логин и пароль")
     public void inputLogAndPass() {
         authPage.login(config.emailOtus(), config.passwordOtus());
-
     }
 
     @And("Открыть страницу авторизации")

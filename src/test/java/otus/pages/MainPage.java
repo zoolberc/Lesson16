@@ -2,7 +2,6 @@ package otus.pages;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -19,21 +18,15 @@ public class MainPage {
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, 15);
+        basePage = new BasePage(driver);
     }
+
     WebDriver driver;
-    WebDriverWait wait;
+    BasePage basePage;
 
-    public void waitVisibility(WebElement webElement) {
-        wait.until(ExpectedConditions.visibilityOf(webElement));
-    }
 
-    public void isElementDisplayed(WebElement webElement) {
-        waitVisibility(webElement);
-        assertTrue(webElement.isDisplayed());
-    }
-     @FindBy(xpath = "//*[@title='Контакты']")
-     private WebElement contactButton;
+    @FindBy(xpath = "//*[@title='Контакты']")
+    private WebElement contactButton;
 
     @FindBy(css = ".header2__auth-reg")
     public WebElement signInButton;
@@ -57,35 +50,29 @@ public class MainPage {
     }
 
     public void openAuthPage() {
-        //WebElement signIn = driver.findElement(By.cssSelector(".header2__auth-reg"));
-        isElementDisplayed(signInButton);
+        basePage.checkElement(signInButton);
         signInButton.click();
         logger.info("Open authorization page");
     }
 
-    public void openTestingCoursePage(){
-//        String iconLocator = ".header2-menu__item-wrapper";
-//        WebElement icon = driver.findElement(By.cssSelector(iconLocator));
+    public void openTestingCoursePage() {
         Actions action = new Actions(driver);
         action.moveToElement(iconCourseLocator).build().perform();
-//        WebElement testing = driver.findElement(By.xpath("//*[contains(text(), 'Тестирование')]"));
-        isElementDisplayed(testingLabel);
+        basePage.checkElement(testingLabel);
         testingLabel.click();
         logger.info("Testing course page is open");
 
     }
-    public  void entranceToLK(){
-//        String iconLocator = ".header2-menu__item_dropdown_no-border";
-//        WebElement icon = driver.findElement(By.cssSelector(iconLocator));
+
+    public void entranceToLK() {
         Actions action = new Actions(driver);
         action.moveToElement(iconMyProfile).build().perform();
-        //driver.findElement(By.cssSelector(".header2-menu__dropdown-text")).click();
         goToMyProf.click();
         logger.info("Go to my profile");
     }
 
     public void goToContactPage() {
-        isElementDisplayed(contactButton);
+        basePage.checkElement(contactButton);
         contactButton.click();
         logger.info("Contacts page is open");
     }

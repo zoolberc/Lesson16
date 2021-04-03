@@ -563,3 +563,232 @@
 2021-04-03 22:51:05,458 DEBUG o.p.ProfilePage [main] Checking data storage
 2021-04-03 22:51:05,458 INFO o.p.ProfilePage [main] Data change successfully
 2021-04-03 22:51:06,210 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:05:32,177 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:05:35,065 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:05:35,610 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:05:35,911 DEBUG o.p.AuthPage [main] Checking whether it is on the authorization pages
+2021-04-03 23:05:36,180 DEBUG o.p.AuthPage [main] Filling in the E-mail field
+2021-04-03 23:05:36,338 DEBUG o.p.AuthPage [main] Filling in the password field
+2021-04-03 23:05:36,401 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:05:37,139 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:10:28,772 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:10:31,220 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:10:31,941 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:10:32,014 DEBUG o.p.AuthPage [main] Checking whether it is on the authorization pages
+2021-04-03 23:10:32,246 DEBUG o.p.AuthPage [main] Filling in the E-mail field
+2021-04-03 23:10:32,406 DEBUG o.p.AuthPage [main] Filling in the password field
+2021-04-03 23:10:32,469 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:10:33,189 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:13:18,653 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:13:19,477 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:14:04,913 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:14:05,708 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:15:09,615 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:15:10,409 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:16:27,258 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:16:28,060 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:17:48,843 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:17:51,531 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:17:52,202 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:17:52,844 DEBUG o.p.AuthPage [main] Checking whether it is on the authorization pages
+2021-04-03 23:17:53,094 DEBUG o.p.AuthPage [main] Filling in the E-mail field
+2021-04-03 23:17:53,246 DEBUG o.p.AuthPage [main] Filling in the password field
+2021-04-03 23:17:53,312 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:17:54,034 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:19:00,804 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:19:02,988 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:19:03,487 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:19:03,797 DEBUG o.p.AuthPage [main] Checking whether it is on the authorization pages
+2021-04-03 23:19:04,046 DEBUG o.p.AuthPage [main] Filling in the E-mail field
+2021-04-03 23:19:04,198 DEBUG o.p.AuthPage [main] Filling in the password field
+2021-04-03 23:19:04,264 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:19:05,003 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:21:30,880 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:21:32,804 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:21:33,312 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:21:33,609 DEBUG o.p.AuthPage [main] Checking whether it is on the authorization pages
+2021-04-03 23:21:33,845 DEBUG o.p.AuthPage [main] Filling in the E-mail field
+2021-04-03 23:21:33,997 DEBUG o.p.AuthPage [main] Filling in the password field
+2021-04-03 23:21:34,060 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:21:34,778 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:22:31,508 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:22:35,114 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:22:35,627 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:22:35,917 DEBUG o.p.AuthPage [main] Checking whether it is on the authorization pages
+2021-04-03 23:22:36,159 DEBUG o.p.AuthPage [main] Filling in the E-mail field
+2021-04-03 23:22:36,319 DEBUG o.p.AuthPage [main] Filling in the password field
+2021-04-03 23:22:36,387 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:22:37,983 DEBUG o.p.AuthPage [main] Checking the login to my profile
+2021-04-03 23:22:37,983 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:22:38,712 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:31:48,069 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:31:50,382 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:31:50,900 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:31:51,184 DEBUG o.p.AuthPage [main] Checking whether it is on the authorization pages
+2021-04-03 23:31:51,433 DEBUG o.p.AuthPage [main] Filling in the E-mail field
+2021-04-03 23:31:51,596 DEBUG o.p.AuthPage [main] Filling in the password field
+2021-04-03 23:31:51,660 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:31:53,249 DEBUG o.p.AuthPage [main] Checking the login to my profile
+2021-04-03 23:31:53,250 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:31:54,058 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:39:39,062 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:39:40,944 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:39:41,527 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:39:41,795 DEBUG o.p.AuthPage [main] Checking whether it is on the authorization pages
+2021-04-03 23:39:42,041 DEBUG o.p.AuthPage [main] Filling in the E-mail field
+2021-04-03 23:39:42,189 DEBUG o.p.AuthPage [main] Filling in the password field
+2021-04-03 23:39:42,250 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:39:43,750 DEBUG o.p.AuthPage [main] Checking the login to my profile
+2021-04-03 23:39:43,750 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:39:44,676 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:39:52,161 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:39:53,953 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:39:54,551 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:39:54,832 DEBUG o.p.AuthPage [main] Checking whether it is on the authorization pages
+2021-04-03 23:39:55,071 DEBUG o.p.AuthPage [main] Filling in the E-mail field
+2021-04-03 23:39:55,223 DEBUG o.p.AuthPage [main] Filling in the password field
+2021-04-03 23:39:55,288 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:39:56,801 DEBUG o.p.AuthPage [main] Checking the login to my profile
+2021-04-03 23:39:56,801 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:39:57,568 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:39:58,688 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:40:00,424 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:40:00,927 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:40:01,182 DEBUG o.p.AuthPage [main] Checking whether it is on the authorization pages
+2021-04-03 23:40:01,420 DEBUG o.p.AuthPage [main] Filling in the E-mail field
+2021-04-03 23:40:01,556 DEBUG o.p.AuthPage [main] Filling in the password field
+2021-04-03 23:40:01,620 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:40:02,585 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:40:03,778 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:40:05,469 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:40:06,023 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:40:08,754 DEBUG o.p.RegisterPage [main] Checking the login to my profile
+2021-04-03 23:40:08,754 INFO o.p.RegisterPage [main] Registration passed
+2021-04-03 23:40:09,484 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:40:10,967 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:40:13,051 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:40:13,592 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:40:16,226 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:40:17,406 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:40:19,531 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:40:22,632 INFO o.p.MainPage [main] Testing course page is open
+2021-04-03 23:40:22,681 INFO o.p.TestingCoursesPage [main] Java QA Engineeris displayed
+2021-04-03 23:40:23,464 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:40:24,628 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:40:28,229 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:40:28,650 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:40:28,940 DEBUG o.p.AuthPage [main] Checking whether it is on the authorization pages
+2021-04-03 23:40:29,173 DEBUG o.p.AuthPage [main] Filling in the E-mail field
+2021-04-03 23:40:29,318 DEBUG o.p.AuthPage [main] Filling in the password field
+2021-04-03 23:40:29,380 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:40:31,138 DEBUG o.p.AuthPage [main] Checking the login to my profile
+2021-04-03 23:40:31,138 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:40:32,602 INFO o.p.MainPage [main] Go to my profile
+2021-04-03 23:40:33,612 DEBUG o.p.ProfilePage [main] Filing in the lastin last name field
+2021-04-03 23:40:33,769 DEBUG o.p.ProfilePage [main] Filing in the latin first name field
+2021-04-03 23:40:35,036 DEBUG o.p.ProfilePage [main] Checking data storage
+2021-04-03 23:40:35,036 INFO o.p.ProfilePage [main] Data change successfully
+2021-04-03 23:40:36,928 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:40:38,145 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:40:39,901 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:40:40,383 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:40:40,700 DEBUG o.p.AuthPage [main] Checking whether it is on the authorization pages
+2021-04-03 23:40:40,940 DEBUG o.p.AuthPage [main] Filling in the E-mail field
+2021-04-03 23:40:41,108 DEBUG o.p.AuthPage [main] Filling in the password field
+2021-04-03 23:40:41,174 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:40:42,586 DEBUG o.p.AuthPage [main] Checking the login to my profile
+2021-04-03 23:40:42,586 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:40:44,144 INFO o.p.MainPage [main] Go to my profile
+2021-04-03 23:40:45,385 DEBUG o.p.ProfilePage [main] Adding an additional contact
+2021-04-03 23:40:45,867 DEBUG o.p.ProfilePage [main] Adding an additional contact
+2021-04-03 23:40:47,103 DEBUG o.p.ProfilePage [main] Checking data storage
+2021-04-03 23:40:47,104 INFO o.p.ProfilePage [main] Data change successfully
+2021-04-03 23:40:49,031 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:40:50,241 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:40:51,641 INFO o.p.TeachersPage [main] Teachers page is open
+2021-04-03 23:40:53,107 INFO o.p.TeachersPage [main] The form is completed
+2021-04-03 23:40:53,709 INFO o.p.TeachersPage [main] Application has been successfully sent
+2021-04-03 23:40:54,446 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:40:55,638 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:40:57,388 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:40:57,908 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:40:58,203 DEBUG o.p.AuthPage [main] Checking whether it is on the authorization pages
+2021-04-03 23:40:58,438 DEBUG o.p.AuthPage [main] Filling in the E-mail field
+2021-04-03 23:40:58,584 DEBUG o.p.AuthPage [main] Filling in the password field
+2021-04-03 23:40:58,647 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:41:00,016 DEBUG o.p.AuthPage [main] Checking the login to my profile
+2021-04-03 23:41:00,016 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:41:01,635 INFO o.p.MainPage [main] Go to my profile
+2021-04-03 23:41:06,112 DEBUG o.p.ProfilePage [main] Checking data storage
+2021-04-03 23:41:06,113 INFO o.p.ProfilePage [main] Data change successfully
+2021-04-03 23:41:06,844 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:41:07,997 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:41:09,954 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:41:11,373 INFO o.p.MainPage [main] Contacts page is open
+2021-04-03 23:41:12,488 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:41:39,640 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:41:41,478 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:41:42,015 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:41:42,294 DEBUG o.p.AuthPage [main] Checking whether it is on the authorization pages
+2021-04-03 23:41:42,538 DEBUG o.p.AuthPage [main] Filling in the E-mail field
+2021-04-03 23:41:42,688 DEBUG o.p.AuthPage [main] Filling in the password field
+2021-04-03 23:41:42,746 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:41:44,765 DEBUG o.p.AuthPage [main] Checking the login to my profile
+2021-04-03 23:41:44,765 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:41:45,490 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:41:51,165 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:41:53,426 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:41:53,943 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:41:54,219 DEBUG o.p.AuthPage [main] Checking whether it is on the authorization pages
+2021-04-03 23:41:54,460 DEBUG o.p.AuthPage [main] Filling in the E-mail field
+2021-04-03 23:41:54,602 DEBUG o.p.AuthPage [main] Filling in the password field
+2021-04-03 23:41:54,669 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:41:55,690 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:42:08,110 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:42:09,789 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:42:10,343 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:42:13,042 DEBUG o.p.RegisterPage [main] Checking the login to my profile
+2021-04-03 23:42:13,042 INFO o.p.RegisterPage [main] Registration passed
+2021-04-03 23:42:13,810 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:42:21,421 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:42:23,155 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:42:23,288 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:42:25,592 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:42:34,465 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:42:36,607 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:42:38,420 INFO o.p.MainPage [main] Testing course page is open
+2021-04-03 23:42:38,522 INFO o.p.TestingCoursesPage [main] Java QA Engineeris displayed
+2021-04-03 23:42:39,265 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:42:46,305 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:42:47,988 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:42:48,469 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:42:48,784 DEBUG o.p.AuthPage [main] Checking whether it is on the authorization pages
+2021-04-03 23:42:49,030 DEBUG o.p.AuthPage [main] Filling in the E-mail field
+2021-04-03 23:42:49,184 DEBUG o.p.AuthPage [main] Filling in the password field
+2021-04-03 23:42:49,249 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:42:50,746 DEBUG o.p.AuthPage [main] Checking the login to my profile
+2021-04-03 23:42:50,746 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:42:52,480 INFO o.p.MainPage [main] Go to my profile
+2021-04-03 23:42:53,543 DEBUG o.p.ProfilePage [main] Filing in the lastin last name field
+2021-04-03 23:42:53,747 DEBUG o.p.ProfilePage [main] Filing in the latin first name field
+2021-04-03 23:42:54,962 DEBUG o.p.ProfilePage [main] Checking data storage
+2021-04-03 23:42:54,963 INFO o.p.ProfilePage [main] Data change successfully
+2021-04-03 23:42:56,919 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:52:46,206 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:52:47,768 INFO o.p.TeachersPage [main] Teachers page is open
+2021-04-03 23:52:49,218 INFO o.p.TeachersPage [main] The form is completed
+2021-04-03 23:52:49,799 INFO o.p.TeachersPage [main] Application has been successfully sent
+2021-04-03 23:52:50,523 INFO o.d.DriverManager [main] Browser driver closed
+2021-04-03 23:52:59,385 INFO o.d.DriverManager [main] Browser driver open
+2021-04-03 23:53:01,358 INFO o.p.MainPage [main] Home page is open
+2021-04-03 23:53:01,899 INFO o.p.MainPage [main] Open authorization page
+2021-04-03 23:53:02,227 DEBUG o.p.AuthPage [main] Checking whether it is on the authorization pages
+2021-04-03 23:53:02,456 DEBUG o.p.AuthPage [main] Filling in the E-mail field
+2021-04-03 23:53:02,609 DEBUG o.p.AuthPage [main] Filling in the password field
+2021-04-03 23:53:02,676 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:53:04,518 DEBUG o.p.AuthPage [main] Checking the login to my profile
+2021-04-03 23:53:04,518 INFO o.p.AuthPage [main] Authorization passed
+2021-04-03 23:53:05,987 INFO o.p.MainPage [main] Go to my profile
+2021-04-03 23:53:09,521 DEBUG o.p.ProfilePage [main] Checking data storage
+2021-04-03 23:53:09,522 INFO o.p.ProfilePage [main] Data change successfully
+2021-04-03 23:53:10,268 INFO o.d.DriverManager [main] Browser driver closed

@@ -10,11 +10,8 @@ import static org.junit.Assert.assertEquals;
 public class ContactPage {
     public ContactPage (WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver,15);
     }
-
     WebDriver driver;
-    WebDriverWait wait;
 
     @FindBy(xpath = "//*[@id=\"__next\"]/div[3]/div/div[3]/div[1]/div[3]/div[2]/a")
     private WebElement contact;

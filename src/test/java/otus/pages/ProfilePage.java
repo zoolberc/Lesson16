@@ -23,11 +23,11 @@ public class ProfilePage {
 
     public ProfilePage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, 10);
+        basePage = new BasePage(driver);
     }
 
     WebDriver driver;
-    WebDriverWait wait;
+    BasePage basePage;
 
     @FindBy(css = "#id_fname_latin")
     private WebElement firstNameLatin;
@@ -66,94 +66,74 @@ public class ProfilePage {
     private List<WebElement> selectButton;
 
 
-    public void waitVisibility(WebElement webElement) {
-        wait.until(ExpectedConditions.visibilityOf(webElement));
-    }
-
-    public void isElementDisplayed(WebElement webElement) {
-        waitVisibility(webElement);
-        assertTrue(webElement.isDisplayed());
-    }
-
-    public void clearAndSendKeys(WebElement webElement, String text) {
-        webElement.clear();
-        webElement.sendKeys(text);
-    }
 
     public void fillFirstName(String text) {
-        isElementDisplayed(firstNameLatin);
-        clearAndSendKeys(firstNameLatin, text);
+        basePage.checkElement(firstNameLatin);
+        basePage.clearAndSendKeys(firstNameLatin, text);
         logger.debug("Filing in the latin first name field");
     }
+
     public void fillLastName(String text) {
-        isElementDisplayed(lastNameLatin);
-        clearAndSendKeys(lastNameLatin, text);
+        basePage.checkElement(lastNameLatin);
+        basePage.clearAndSendKeys(lastNameLatin, text);
         logger.debug("Filing in the lastin last name field");
     }
+
     public void save() {
-        isElementDisplayed(saveButton);
+        basePage.checkElement(saveButton);
         saveButton.click();
-        //.findElement(By.xpath("//*[@title = 'Редактировать резюме']")).isDisplayed(); // проверка что данные сораннены
         titleEditResume.isDisplayed();
         logger.debug("Checking data storage");
         logger.info("Data change successfully");
     }
-    public void check(String latinFirstName, String latinLastName){
-        //driver.findElement(By.xpath("//*[@title = 'Редактировать резюме']")).click();
+
+    public void check(String latinFirstName, String latinLastName) {
         titleEditResume.click();
-        //assertEquals("Персональные данные", driver.findElement(By.cssSelector("h3.text")).getText());
-        assertEquals("Персональные данные",titlePersonalData.getText());
+        assertEquals("Персональные данные", titlePersonalData.getText());
         assertEquals(latinFirstName, firstNameLatin.getAttribute("value"));
         assertEquals(latinLastName, lastNameLatin.getAttribute("value"));
     }
+
     public void addFirstContact(String text) {
         driver.findElement(By.xpath("//*[@class ='placeholder']//..")).click();
-        //driver.findElement(By.xpath("//*[@title = 'VK']")).click(); // выбор способа связи ВК
         titleVK.click();
-        isElementDisplayed(firstContact);
+        basePage.checkElement(firstContact);
         firstContact.sendKeys(text);
         logger.debug("Adding an additional contact");
     }
+
     public void addSecondContact(String text) {
         addSecContact.click();
-        //driver.findElement(By.xpath("//*[contains(@class,'js-lk-cv-custom-select-add')]")).click();
         driver.findElements(By.xpath("//*[@class ='placeholder']//..")).get(0).click();
-        //driver.findElements(By.xpath("//*[@title = 'Skype']")).get(1).click();
         titleSkype.get(1).click();
-        isElementDisplayed(secondContact);
+        basePage.checkElement(secondContact);
         secondContact.sendKeys(text);
         logger.debug("Adding an additional contact");
     }
 
-    public void checkingContactStorage(){
-        //WebElement edit = driver.findElement(By.xpath("//*[@title = 'Редактировать резюме']"));
-        isElementDisplayed(titleEditResume);
+    public void checkingContactStorage() {
+        basePage.checkElement(titleEditResume);
         titleEditResume.click();
-       // assertEquals("Персональные данные", driver.findElement(By.cssSelector("h3.text")).getText());
-        assertEquals("Персональные данные",titlePersonalData.getText());
+        assertEquals("Персональные данные", titlePersonalData.getText());
         assertEquals(config.skypeContact(), firstContact.getAttribute("value"));
         assertEquals(config.vkContact(), secondContact.getAttribute("value"));
     }
+
     //удаление контактов
     public void deleteAdditionalContacts() {
         List<WebElement> conts = driver.findElements(By.xpath("//*[contains(text(), 'Удалить')]"));
         conts.get(1).click();
         conts.get(3).click();
-        //driver.findElement(By.cssSelector("button.button_md-4:nth-child(2)")).click(); // сохранение данных
         saveButton.click();
-        //driver.findElement(By.xpath("//*[@title = 'Редактировать резюме']")).isDisplayed(); // проверка что данные сораннены
         titleEditResume.isDisplayed();
     }
 
-    public void uploadImage(){
+    public void uploadImage() {
         File file = new File("src/test/resources/images/img.png");
-        //isElementDisplayed(uploadAvatar);
         uploadAvatar.sendKeys(file.getAbsolutePath());
-        //WebElement select = driver.findElement(By.xpath("//*[contains(text(), 'Выбрать')]"));
-        isElementDisplayed(selectButton.get(1));
+        basePage.checkElement(selectButton.get(1));
         selectButton.get(1).click();
-       // assertEquals("Персональные данные", driver.findElement(By.cssSelector("h3.text")).getText());
-        assertEquals("Персональные данные",titlePersonalData.getText());
+        assertEquals("Персональные данные", titlePersonalData.getText());
     }
 
 }

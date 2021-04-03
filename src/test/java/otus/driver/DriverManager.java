@@ -53,6 +53,7 @@ public class DriverManager {
         profilePage = PageFactory.initElements(driver, ProfilePage.class);
         teachersPage = PageFactory.initElements(driver, TeachersPage.class);
         contactPage = PageFactory.initElements(driver, ContactPage.class);
+
     }
 
     public void quitDriver() {
@@ -60,7 +61,6 @@ public class DriverManager {
             driver.manage().deleteAllCookies();
             driver.quit();
             logger.info("Browser driver closed");
-
         }
     }
 }
